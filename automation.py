@@ -17,6 +17,7 @@ class InternetException(Exception):
 WIDTH, HEIGHT = size()
 
 
+
 def checkNum(num:str)->bool:
     return '+'in num or '_'in num
 
