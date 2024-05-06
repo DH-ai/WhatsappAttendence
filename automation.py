@@ -28,7 +28,7 @@ def findTextBox()->None:
         moveTo(locate[0]+150,locate[1]-10 )
         click()
     except Exception:
-        locate(f"{dir_path}\\data\\pywhatkit_smile1.png")
+        locate = (f"{dir_path}\\data\\pywhatkit_smile1.png")
         moveTo(locate[0]+150,locate[1]-10 )
         click()
 
@@ -63,7 +63,7 @@ def sendMesg(receiver: str, message: str, wait_time:int)->None:
     time.sleep(wait_time-5)
     if not checkNum(num=receiver):
         index = 0
-        length = len(message)
+        length = len(message)       
         while index < length:
             letter = message[index]
             if letter == ":":    
