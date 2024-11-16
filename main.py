@@ -6,86 +6,43 @@ import pywhatkit.sc
 # pywhatkit.sendwhatmsg('+917219201845',"Good Morning",7,14)
 
 
-
+def check(num):
+    if len(num) == 10:
+        return num
+    if num[0] == "0":
+        return num[1:]
+    else:
+        return num
 def parser():
-    with open("database.csv","r") as file:
+    with open("./WhatsappAttendence/database.csv","r") as file:
         reader = csv.reader(file)
-        iter_reader = iter(reader)
-        for( iter_reader) in iter_reader:
+        iter_readerr = iter(reader)
+        for( iter_reader) in iter_readerr:
             
-            print("Message sent to "+iter_reader[1])
-            
-            pywhatkit.sendwhatmsg_instantly("+91"+str(iter_reader[1]),msg,tab_close=True,wait_time=20
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            
-                                            )
+
+            try:
+                pywhatkit.sendwhatmsg_instantly("+91"+check(str(iter_reader)),msg,tab_close=True,wait_time=10)
+            except:
+                print("Error")
+                pass
 
 
+                                            
+                                            
+                                            
+                                            
+                                            
 
+msg = """Greetings from Mood Indigo, 
+Based on popular request, we've extended the submission deadline for your competition entries! 🎉
 
-msg = """Hello,
-Get ready as Mood Indigo is coming to delhi on 13th - 14th October with its Mini Mood Indigo 🔥
-Some of The unique incentives are: 
-1) Mood Indigo Delhi multicity certificates to all the participants and the winners of multicity 
-2) Direct Entry into the higher rounds of mood indigo in main fest in IIT Bombay. 
-3) Championship trophy - Take your college to the top of the leaderboard by winning and participating in the competitions, the college with highest points will be awarded with Delhi Multicity Champions
-Register now at my.moodi.org/multicities 
-Rule Book is attached here - https://drive.google.com/file/d/1Qsm-c9juHlEoXXmi66yweaoG7bpoi2zc/view?usp=drive_link"""
+🗓 New Deadline: 24th November 2024, 11:59 PM
+
+This extra time is all yours to make sure your entry is exactly how you want it. Don’t forget to go over the guidelines to ensure everything’s set.
+Also note that, no further deadlines will be extended 
+You Can Register now and submit the drive link till 24th Nov 2024
+Register now at my.moodi.org/competitions 
+rulebook: rulebook.moodi.org"""
 parser()
 
 # print(time.localtime())
